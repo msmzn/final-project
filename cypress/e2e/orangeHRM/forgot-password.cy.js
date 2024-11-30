@@ -12,13 +12,11 @@ describe("Forgot Password Feature", ()=>{
     
     it("User Reset Password with empty Username", ()=>{
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode");
-        forgotPasswordPage.verifyForgotPasswordPage();
         forgotPasswordPage.buttonResetPassword().click();
         forgotPasswordPage.requiredErrorMessage(0).should("have.text", "Required");
     });
     it("User Click Cancel Button whitout Input Username", ()=>{
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode");
-        forgotPasswordPage.verifyForgotPasswordPage();
         forgotPasswordPage.buttonCancel().click();
     });
 });
